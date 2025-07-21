@@ -1,1 +1,16 @@
-\section{Spaces}
+\section{Fields}
+
+% Problem 4
+\setcounter{problem}{3}
+\begin{problem}
+  The example of $\Z_p$ (where $p$ is prime) shows that not quite all laws of elementary arithmetic hold in fields;
+  in $\Z_2$, for instance $1 + 1 = 0$.
+  Prove that if $\mathcal{F}$ is a field, then either the results repeatedly adding 1 to itself is always different from 0, or else the first time that it is equal to 0 occurs when the number of summands is a prime.
+\end{problem}
+
+\begin{solution}
+  Let $m \in \N$ be the lowest number of summands such that $\underbrace{1 + 1 + 1 + \ldots + 1}_{\text{m times}} = 0$.
+  If $m$ were not prime, i.e., $m = ab$, then clearly $\underbrace{1 + 1 + 1 + \ldots + 1}_{\text{a times}} = x$, where $x \neq 0$ by the minimality of $m$.
+  It is clear that $\underbrace{x + x + x + \ldots + x}_{\text{b times}} = \underbrace{1 + 1 + 1 + \ldots + 1}_{\text{m times}} = 0$, hence $x(\underbrace{1 + 1 + 1 + \ldots + 1}_{\text{b times}}) = 0$.
+  Thus either $x = 0$ or $\underbrace{1 + 1 + 1 + \ldots + 1}_{\text{b times}} = 0$, both leading to a contradiction of the minimality of $m$.
+\end{solution}
