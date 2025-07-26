@@ -3,7 +3,7 @@
 
 % Problem 3.1
 \begin{problem}
-  \begin{enumerate}[label=[\alph*]]
+  \begin{enumerate}[label=(\alph*)]
     \item Prove that the four vectors
       \[x = (1, 0, 0),\]
       \[y = (0, 1, 0),\]
@@ -15,7 +15,7 @@
 \end{problem}
 
 \begin{solution}
-  \begin{enumerate}[label=[\alph*]]
+  \begin{enumerate}[label=(\alph*)]
     \item Let $\alpha, \beta, \gamma, \delta$ be scalars such that
       \[\alpha x_1 + \beta y_1 + \gamma z_1 + \delta u_1 = 0,\]
       \[\alpha x_2 + \beta y_2 + \gamma z_2 + \delta u_2 = 0,\]
@@ -42,11 +42,11 @@
 
 % Problem 3.2
 \begin{problem}
-  Prove that if $\mathcal{R}$ is considered as a rational vector space, then a necessary and sufficient condition that the vectors $1$ and $\xi$ in $\mathcal{R}$ be linearly independent is that the real numer $\xi$ be irrational.
+  Prove that if $\R$ is considered as a rational vector space, then a necessary and sufficient condition that the vectors $1$ and $\xi$ in $\R$ be linearly independent is that the real numer $\xi$ be irrational.
 \end{problem}
 
 \begin{solution}
-  Let $\mathcal{R}$ be a rational vector space.
+  Let $\R$ be a rational vector space.
   First, assume that $1$ and $\xi$ are linearly independent, i.e., $\alpha + \beta \xi = 0$ for some $\alpha, \beta \in \Q$ implies $\alpha = \beta = 0$.
   For a contradiction, suppose that $\xi = \frac{p}{q}$ for some integers $p, q$.
   Then we could let $\beta = 1$ and $\alpha = -\frac{p}{q}$ and we would have $\alpha + \beta \xi = 0$, contradicting $\alpha = \beta = 0$, so $\xi$ must be irrational.
@@ -71,4 +71,54 @@
   This implies (i) $\alpha = -\gamma$, (ii) $\alpha = -\beta$, and (iii) $\beta = -\gamma$.
   Combining (i) and (iii) we clearly see $\alpha = \beta$, which in conjuction with (ii) yields $\alpha = \beta = \gamma = 0$, hence these vectors are linearly independent.
 \end{solution}
+
+% Problem 3.4
+\begin{problem}
+  \begin{enumerate}[label=(\alph*)]
+    \item Under what conditions on the scalar $\xi$ are the vectors $(1 + \xi, 1 - \xi)$ and $(1 - \xi, 1 + \xi)$ in $\C^2$ linearly independent.
+    \item Under what conditions on the scalar $\xi$ are the vectors $(\xi, 1, 0), (1, \xi, 1),$ and $(0, 1, \xi)$ in $\R^3$ linearly independent.
+    \item What is the answer to (b) for $\Q^3$?
+  \end{enumerate}
+\end{problem}
+
+\begin{solution}
+  \begin{enumerate}[label=(\alph*)]
+    \item Let $\alpha, \beta$ be scalars such that
+      \[\alpha(1 + \xi) + \beta(1 - \xi) = 0,\]
+      \[\alpha(1 - \xi) + \beta(1 + \xi) = 0.\]
+      From here we have
+      \[\alpha + \beta (\alpha - \beta)\xi = 0,\]
+      \[\alpha + \beta + (\beta - \alpha)\xi = 0.\]
+      Subracting these we have
+      \[(2\alpha - 2\beta)\xi = 0,\]
+      or
+      \[(\alpha = \beta \vee \xi = 0).\]
+      If $\xi = 0$, we can let $\alpha = -\beta$ and we are done.
+      Otherwise, we have $\alpha = \beta$ and $\alpha + \beta = 0$, which implies $\alpha = \beta = 0$.
+      So, $\xi = 0$ if these vectors are linearly dependent.
+    \item Similarly to before, we have
+      \begin {enumerate}[label=(\roman*)]
+        \item $\alpha\xi + \beta = 0,$
+        \item $\alpha + \beta\xi + \gamma = 0,$
+        \item $\beta + \gamma\xi = 0.$
+      \end{enumerate}
+      Clearly from (i) and (iii) we have $\alpha = \gamma = \beta \cdot \frac{1}{\xi},$ if $\xi \neq 0$.
+      If $\xi = 0$ these vectors are clearly dependent with $\beta = 0$ and $\alpha = -\gamma$.
+      From (ii) we now get $\beta(\xi + \frac{2}{\xi}) = 0$.
+      Since $\beta \neq 0$ (otherwise $\alpha = \beta = \gamma = 0$) we have $\frac{\xi^2 + 2}{\xi} = 0$, however $\xi^2 + 2 = 0$ has no solutions in $\R$.
+      So, $\xi = 0$ if these vectors are linearly dependent.
+    \item It would remain the same.
+      There would be new values for $\xi$ in $\C^3$ however.
+  \end{enumerate}
+\end{solution}
+
+% Problem 3.5
+\begin{problem}
+  \begin{enumerate}[label=(\alph*)]
+    \item The vectors $(\xi_1, \xi_2)$ and $(\eta_1, \eta_2)$ in $\C^2$ are linearly dependent if and only if $\xi_1\eta_2 = \xi_2\eta_1$.
+    \item Find a similar necessary and sufficient condition for linear independence of two vectors in $\C^3$.
+      Do the same for three vectors in $\C^3$.
+    \item Is there a set of three linearly independent vectors in $\C^2$.
+  \end{enumerate}
+\end{problem}
 
