@@ -1,0 +1,74 @@
+\section{Bases}
+
+
+% Problem 3.1
+\begin{problem}
+  \begin{enumerate}[label=[\alph*]]
+    \item Prove that the four vectors
+      \[x = (1, 0, 0),\]
+      \[y = (0, 1, 0),\]
+      \[z = (0, 0, 1),\]
+      \[u = (1, 1, 1),\]
+      in $\C^3$ form a linearly dependent set, but any three of them are linearly independent.
+    \item If the vectors $x, y, z,$ and $u$ in \mathcal{P} are defined by $x(t) = 1, y(t) = t, z(t) = t^2,$ and $u(t) = 1 + t + t^2$, prove that $x, y, z,$ and $u$ are linearly independent, but any three of them are linearly dependent.
+  \end{enumerate}
+\end{problem}
+
+\begin{solution}
+  \begin{enumerate}[label=[\alph*]]
+    \item Let $\alpha, \beta, \gamma, \delta$ be scalars such that
+      \[\alpha x_1 + \beta y_1 + \gamma z_1 + \delta u_1 = 0,\]
+      \[\alpha x_2 + \beta y_2 + \gamma z_2 + \delta u_2 = 0,\]
+      \[\alpha x_3 + \beta y_3 + \gamma z_3 + \delta u_3 = 0.\]
+      From here we have the following
+      \[\alpha + \delta = 0,\]
+      \[\beta + \delta = 0,\]
+      \[\gamma + \delta = 0.\]
+      And finally we see that $\alpha = \beta = \gamma = -\delta$.
+      So, we have infinitely many solutions such that $\alpha \neq \beta \neq \gamma \neq \delta \neq 0$, hence $x, y, z, u$ is a linearly dependent set.
+      It is also pretty clear that any three of the vectors $x, y, z, u$ are linearly independent.
+    \item Let $\alpha, \beta, \gamma, \delta$ be scalars such that
+      \[\alpha x(t) + \beta y(t) + \gamma z(t) + \delta u(t) = 0,\]
+      for every $t$.
+      If we consider $t = 0$, we see $\alpha + \delta = 0$.
+      For an aribtrary $t$ we have
+      \[\alpha + \beta t + \gamma t^2 + \delta + \delta t + \delta t^2\]
+      or
+      \[(\alpha + \delta) + (\beta + \delta)t + (\gamma + \delta)t^2 = 0.\]
+      From here we see that $\alpha = \beta = \gamma = -\delta$ is a solution, so for example $(1, 1, 1, -1)$ is a solution, hence $x(t), y(t), z(t), u(t)$ are linearly dependent.
+      It is again quite easy to check that any three of these vectors are linearly independent.
+  \end{enumerate}
+\end{solution}
+
+% Problem 3.2
+\begin{problem}
+  Prove that if $\mathcal{R}$ is considered as a rational vector space, then a necessary and sufficient condition that the vectors $1$ and $\xi$ in $\mathcal{R}$ be linearly independent is that the real numer $\xi$ be irrational.
+\end{problem}
+
+\begin{solution}
+  Let $\mathcal{R}$ be a rational vector space.
+  First, assume that $1$ and $\xi$ are linearly independent, i.e., $\alpha + \beta \xi = 0$ for some $\alpha, \beta \in \Q$ implies $\alpha = \beta = 0$.
+  For a contradiction, suppose that $\xi = \frac{p}{q}$ for some integers $p, q$.
+  Then we could let $\beta = 1$ and $\alpha = -\frac{p}{q}$ and we would have $\alpha + \beta \xi = 0$, contradicting $\alpha = \beta = 0$, so $\xi$ must be irrational.
+  This shows that it is a necessary condition.
+
+  To show that it is sufficient, assume that $\xi$ is irrational.
+  For a contradiction, assume there are some $\alpha, \beta \in \Q$ such that $\alpha + \beta \xi = 0$.
+  Since $\alpha, \beta \in \Q$, we know that $\alpha = \frac{p}{q}$, $\beta = \frac{m}{n}$ for some $p, q, m, n \in \Z$.
+  Then we have $\frac{p}{q} + \frac{m}{n} \xi = 0$, or $\xi = -\frac{pn}{qm}$, which is clearly rational, a contradiction.
+\end{solution}
+
+% Problem 3.3
+\begin{problem}
+  Is it true that if $x, y$ and $z$ are linearly independent vectors, then so also are $x + y, y + z$, and $z + x$?
+\end{problem}
+
+\begin{solution}
+  Let $x, y, z$ be linearly independent vectors, i.e., $\alpha x + \beta y + \gamma z = 0$ implies $\alpha = \beta = \gamma = 0$.
+  Let us consider the vectors $x + y, y + z$, and $z + x$.
+  Let $\alpha, \beta, \gamma$ be scalars such that $\alpha(x + y) + \beta(y + z) + \gamma(z + x) = 0$.
+  Then by distributivity we have $(\alpha + \gamma)x + (\alpha + \beta)y + (\beta + \gamma)z = 0$.
+  This implies (i) $\alpha = -\gamma$, (ii) $\alpha = -\beta$, and (iii) $\beta = -\gamma$.
+  Combining (i) and (iii) we clearly see $\alpha = \beta$, which in conjuction with (ii) yields $\alpha = \beta = \gamma = 0$, hence these vectors are linearly independent.
+\end{solution}
+
