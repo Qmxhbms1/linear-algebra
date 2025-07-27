@@ -122,3 +122,46 @@
   \end{enumerate}
 \end{problem}
 
+\begin{solution}
+  \begin{enumerate}[label=(\alph*)]
+    \item First, let us assume the vectors $(\xi_1, \xi_2)$ and $(\eta_1, \eta_2)$ are linearly dependent in $\C^2$.
+      Then, there exists some $\alpha, \beta \neq 0 \in \C^2$ such that $\alpha\xi_1 + \beta\eta_1 = 0$, $\alpha\xi_2 + \beta\eta_2 = 0$.
+      If $\xi_1 = 0$ then $\xi_2 = 0$ or $\eta_2 = 0$ (otherwise $\alpha = \beta = 0$), so $\xi_1\eta_2 = \xi_2\eta_1 = 0$.
+      Otherwise we have $\alpha = -\frac{\beta\eta_1}{\xi_1}$.
+      Clearly $\beta \neq 0$, otherwise $\alpha = \beta = 0$.
+      Replacing $\alpha$ we have $-\frac{\beta\eta_1}{\xi_1}\xi_2 + \beta\eta_2 = 0$, or $\frac{-\eta_1\xi_2 + \eta_2\xi_1}{\xi_1} = 0$.
+      So $\xi_1\eta_2 = \xi_2\eta_1$.
+
+      Conversely, let $\xi_1\eta_2 = \xi_2\eta_1$.
+      Let $\alpha = -\eta_2$ and $\beta = \xi_2$.
+      Then we have $\alpha\xi_1 + \beta\eta_1 = 0$ and $\alpha\xi_2 + \beta\eta_2 = 0$.
+      If $\xi_2 = -\eta_2 = 0$. then let $\alpha = 1$ and $\beta = -\frac{\xi_1}{\eta_1}$.
+      If $\eta_1 = 0$ then let $\alpha = 0$ and $\beta \in \C\setminus\{0\}$.
+    \item We can prove in the same manner as above that $(\xi_1, \xi_2, \xi_3)$ and $(\eta_1, \eta_2, \eta_3)$ in $\C^3$ are linearly dependent if and only if $\xi_1\eta_2 = \xi_2\eta_1 \wedge \xi_2\eta_3 = \xi_3\eta_2 \wedge \xi_3\eta_1 = \xi_1\eta_3$.
+      For 3 vectors in $\C^3$ we should consider the determinant, but this has not been introduced yet.
+    \item Since $\C^2$ has a basis with 2 elements, no set of more than 2 vectors can be linearly independent.
+      This is proven in the next section.
+  \end{enumerate}
+\end{solution}
+
+% Problem 3.6
+\begin{problem}
+  \begin{enumerate}[label=(\alph*)]
+    \item Under what conditions on the scalars $\xi$ and $\eta$ are the vectors $(1, \xi)$ and $(1, \eta)$ in $\C^2$ linearly dependent?
+    \item Under what conditions on the scalars $\xi$, $\eta$, and $\zeta$ are the vectors $(1, \xi, \xi^2)$, $(1, \eta, \eta^2)$, and $(1, \zeta, \zeta^2)$ in $\C^3$ linearly dependent?
+    \item Guess and prove a generalization of (a) and (b) to $\C^n$.
+  \end{enumerate}
+\end{problem}
+
+\begin{solution}
+  \begin{enumerate}[label=(\alph*)]
+    \item Vectors $(1, \xi)$ and $(1, \eta)$ are linearly dependent if and only $\xi = \eta$.
+      If $\xi = \eta$, let $\alpha = 1$ and $\beta = -1$.
+      
+      Conversely, if $\alpha = -\beta$, then $\alpha(\xi - \eta) = 0$, hence $\xi = \eta$.
+    \item Again, we need to consider the determinant.
+      From there with a some algebra we get $\xi = \eta \vee \xi = \zeta \vee \eta = \zeta$.
+    \item The general case would be $n$ vectors in $\C^n$ $(1, x_1, x_1^2, \ldots, x_1^n)$, $(1, x_2, x_2^2, \ldots, x_2^n)$, \ldots, $(1, x_n, x_n^2, \ldots, x_n^n)$ is linearly dependent if and only if for some $i \neq j$ $x_i = x_j$.
+      The proof again would require determinants.
+  \end{enumerate}
+\end{solution}
