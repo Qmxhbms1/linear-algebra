@@ -31,7 +31,7 @@
       \[\alpha x(t) + \beta y(t) + \gamma z(t) + \delta u(t) = 0,\]
       for every $t$.
       If we consider $t = 0$, we see $\alpha + \delta = 0$.
-      For an aribtrary $t$ we have
+      For an arbitrary $t$ we have
       \[\alpha + \beta t + \gamma t^2 + \delta + \delta t + \delta t^2\]
       or
       \[(\alpha + \delta) + (\beta + \delta)t + (\gamma + \delta)t^2 = 0.\]
@@ -164,4 +164,89 @@
     \item The general case would be $n$ vectors in $\C^n$ $(1, x_1, x_1^2, \ldots, x_1^n)$, $(1, x_2, x_2^2, \ldots, x_2^n)$, \ldots, $(1, x_n, x_n^2, \ldots, x_n^n)$ is linearly dependent if and only if for some $i \neq j$ $x_i = x_j$.
       The proof again would require determinants.
   \end{enumerate}
+\end{solution}
+
+% Problem 3.7
+\begin{problem}
+  \begin{enumerate}[label=(\alph*)]
+    \item Find two bases in $\C^4$ such that the only vectors common to both are $(0, 0, 1, 1)$ and $(1, 1, 0, 0)$.
+    \item Find two bases in $\C^4$ that have no vectors in common so that one of them contains the vectors $(1, 0, 0, 0)$ and $(1, 1, 0, 0)$ and the other contains the vectors $(1, 1, 1, 0)$ and $(1, 1, 1, 1)$.
+  \end{enumerate}
+\end{problem}
+
+\begin{solution}
+  \begin{enumerate}[label=(\alph*)]
+    \item Take the set $\{(1, 0, 0, 0), (1, 1, 0, 0), (0, 0, 1, 1), (0, 0, 0, 1)\}$ as the first basis.
+      Since it is row equivalent to the identity matrix it forms a basis.
+      For the second, trivially take $(2, 0, 0, 0)$ and $(0, 0, 0, 2)$ instead of $(1, 0, 0, 0)$ and $(0, 0, 0, 1)$.
+    \item For the first basis take \[\{(1, 0, 0, 0), (1, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1)\}\] and for the second \[\{(2, 0, 0, 0), (2, 2, 0, 0), (1, 1, 1, 0), (1, 1, 1, 1)\}\].
+      It is easy to see that these for a basis for $\C^4$.
+  \end{enumerate}
+\end{solution}
+
+% Problem 3.8
+\begin{problem}
+  \begin{enumerate}[label=(\alph*)]
+    \item Under what conditions on the scalar $\xi$ do the vectors $(1, 1, 1)$ and $(1, \xi, \xi^2)$ form a basis of $\C^3$.
+    \item Under what conditions on the scalar $\xi$ do the vectors $(0, 1, \xi)$, $(\xi, 0, 1)$, and $(\xi, 1, 1 + \xi)$ form a basis of $\C^3$.
+  \end{enumerate}
+\end{problem}
+
+\begin{solution}
+  \begin{enumerate}[label=(\alph*)]
+    \item Under no condition can two vectors span $\C^3$, as will be proven in the next chapter.
+    \item Again, under no condition since $(0, 1, \xi) + (\xi, 0, 1) = (\xi, 1, 1 + \xi)$, hence this set of vectors is linearly dependent for every $\xi \in \C$.
+  \end{enumerate}
+\end{solution}
+
+% Problem 3.9
+\begin{problem}
+  Consider the set of all those vectors in $\C^3$ each of whose coordinates is either 0 or 1; how many different bases does this set contain?
+\end{problem}
+
+\begin{solution}
+  There are 8 such vectors, $\{(0, 0, 0), (0, 0, 1), (0, 1, 1), (1, 0, 1), (1, 1, 0), (1, 0, 0), (0, 1, 0), (1, 1, 1)\}$.
+  We can trivially form 7 1-dimensional basis by just taking any non-zero vector.
+
+  To form a 2-dimensional basis we can pick any two distinct non-zero vectors.
+  We can do this in $\binom{7}{2} = 21$ ways.
+
+  To form a dimensional basis, we can choose our 3 vectors in 29 ways (check by hand to see which are linearly dependent and repeat).
+  In total we have 57 basis.
+\end{solution}
+
+% Problem 3.10
+\begin{problem}
+  If $\mathcal{X}$ is the set consisting of the six vectors $(1, 1, 0, 0), (1, 0, 1, 0), (1, 0, 0, 1), (0, 1, 1, 0), (0, 1, 0, 1), (0, 0, 1, 1)$ in $\C^4$, find two different maximal linearly independent subsets of $\mathcal{X}$.
+\end{problem}
+
+\begin{solution}
+  Any set of 4 linearly independent vectors in $\C^4$ is maximally linearly independent.
+  Two such sets are $\{(1, 1, 0, 0), (1, 0, 1, 0), (0, 0, 1, 1), (0, 1, 1, 0)\}$ and $\{(1, 1, 0, 0), (1, 0, 1, 0), (0, 0, 1, 1), (1, 0, 0, 1)\}$.
+  It is easy to show their independence.
+\end{solution}
+
+% Problem 3.11
+\begin{problem}
+  Prove that every vector space has a basis.
+\end{problem}
+
+\begin{solution}
+  Let $\mathcal{V}$ be a set of vectors.
+  Consider the set of all linearly independent subsets of $\mathcal{V}$, call this set $\mathcal{V}_L$.
+  Also, consider a partial ordering on $\mathcal{V}_L$ given by $A < B \Leftrightarrow A \subset B$.
+  Now, let us look at a totally ordered subset of $A$ of $\mathcal{V}_L$.
+  Clearly $\bigcup A$ is an upper bound of $A$, we shall show that $\bigcup A \in \mathcal{V}_L$.
+  Consider a finite subset of $\mathcal{V}_L$, call it $X = \{x_1, x_2, \ldots, x_n\}$.
+  By the definition of a union there must be some $X_1, \ldots, X_n \in A$ such that $x_1 \in X_1, \ldots, x_n \in X_n$.
+  Since $A$ is totally ordered any finite subset of $A$ must have a greatest element.
+  Call it $Y$.
+  Clearly $X \subset Y$ and $Y$ must be linearly independent since $Y \in A \in \mathcal{V}_L$.
+  Hence $X$ is linearly independent.
+  Since $X$ was arbitrary, any finite subset of $\bigcup A$ must be linearly independent, thus $\bigcup A$ is linearly independent.
+  Hence $\bigcup A$ is an upper bound of $A$ in $\mathcal{V}_L$.
+  Since $A$ was arbitrary, by Zorn's lemma, $\mathcal{V}_L$ has a maximal element, call it $a$.
+  Clearly $a$ is linearly independent and must span $\mathcal{V}$, since if we had some $b \in \mathcal{V}$ such that $b$ couldn't be written as a linear combination of vectors in $a$, then $a \cup b$ would be linearly independent, contradicting the maximality of $a$.
+  Hence $a$ is a basis of $\mathcal{V}$.
+  Since $\mathcal{V}$ was arbitrary, every vector space has a basis.
 \end{solution}
