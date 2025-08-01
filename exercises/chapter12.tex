@@ -9,9 +9,52 @@
   Let us consider an $x \in \mathcal{V}$ such that $x \notin \mathcal{W}$.
   Consider a basis $\mathcal{B} = \{x_1, \ldots, x_n\}$ of $\mathcal{W}$.
   Since we know that $x$ cannot be written as a linear combinantion of vectors in $\mathcal{B}$, the set $\mathcal{B} \cup \{x\}$ must be linearly independent.
-  However this is a set with $n + 1$ elements, contradiciting the fact that any subset with $m > n$ elements of an n-dimensional vectors space is linearly dependent.
+  However this is a set with $n + 1$ elements, contradicting the fact that any subset with $m > n$ elements of an n-dimensional vectors space is linearly dependent.
   Hence, we cannot have $x \notin \mathcal{W}$, thus $\mathcal{V} \subset \mathcal{W}$ and finally $\mathcal{V} = \mathcal{W}$.
 \end{solution}
 
 % Problem 2
+\begin{problem}
+  If $\mathcal{W}$ and $\mathcal{U}$ are subspaces of a vector space $\mathcal{V}$, and if every vector in $\mathcal{V}$ belongs either to $\mathcal{W}$ or $\mathcal{U}$ (or both), then either $\mathcal{W} = \mathcal{V}$ or $\mathcal{U} = \mathcal{V}$ (or both).
+\end{problem}
 
+\begin{solution}
+  Suppose neither $\mathcal{W}$ nor $\mathcal{U}$ were equal to $\mathcal{V}$.
+  Then there would be some some $x \in \mathcal{W}$ and $y \in \mathcal{U}$ such that $x \notin \mathcal{U}$ and $y \notin \mathcal{V}$.
+  Clearly $x + y \in \mathcal{V}$ as it is a linear combinantion of two vectors in a vector space.
+  However, notice that $x + y \notin \mathcal{W}$, otherwise we would have $(x + y) - x = y \in \mathcal{W}$.
+  Completely analogously, we have $x + y \notin \mathcal{U}$, contradicting our assumption that every vector of $\mathcal{V}$ is in one of the subspaces.
+  Thus at least one of $\mathcal{W}$ or $\mathcal{U}$ must be equal to $\mathcal{V}$
+\end{solution}
+
+% Problem 3
+\begin{problem}
+  If $x, y$, and $z$ are vectors such that $x + y + z = 0$, then $x$ and $y$ span the same subspace as $y$ and $z$.
+\end{problem}
+
+\begin{solution}
+  Consider any vector $v$ in the subspace spanned by $x$ and $y$.
+  By definition, we have $v = \alpha x + \beta y$.
+  However from our assumption notice that we know $x = - y - z$.
+  Hence we have $v = \alpha (- y - z) + \beta y = - \alpha z + (\beta - 1) y$.
+  Thus $v$ is in the subspace spanned by $y$ and $z$.
+
+  We can make the same argument to show that for any $w$ in the subspace spanned by $y$ and $z$, we have that $w$ belongs to the subspace spanned by $x$ and $y$.
+
+  Thus these subspaces are equal.
+\end{solution}
+
+% Problem 4
+\begin{problem}
+  Suppose that $x$ and $y$ are vectors and $\mathcal{W}$ is a subspace in a vector space $\mathcal{V}$;
+  let $\mathcal{U}$ be the subspace spanned by $\mathcal{W}$ and $x$, and let $\mathcal{U'}$ be the subspace spanned by $\mathcal{W}$ and $y$.
+  Prove that if $y$ is in $\mathcal{U}$ but not in $\mathcal{W}$, then $x$ is in $\mathcal{U'}$.
+\end{problem}
+
+\begin{solution}
+  Let $\mathcal{B} = \{x_1 , \ldots, x_n\}$ be a basis of the subspace $\mathcal{W}$.
+  If we had $x \in \mathcal{W}$ then we would have $\mathcal{W} = \mathcal{U}$ which would contradict our assumption that $y$ is in one but not the other.
+  Thus $x \notin \mathcal{W}$ and $\mathcal{B} \cup \{x\}$ is linearly independent and clearly a basis of the subspace spanned by $\mathcal{W}$ and $x$.
+  Since $y \in \mathcal{U}$, we know that for some scalars $\alpha_i$ we have $y = \alpha_1 x_1 + \ldots \alpha_n x_n + \alpha x$, and we know that $\alpha \neq 0$, otherwise $y$ would be a linear combinantion of vectors in $\mathcal{B}$ and hence belong to $\mathcal{W}$.
+  Finally, we have $x = \frac{1}{\alpha} y - \frac{\alpha_1}{\alpha} x_1 - \ldots - \frac{\alpha_n}{\alpha} x_n$, hence $x$ is a linear combinantion of vectors in $\mathcal{U'}$ and $x \in \mathcal{U'}$.
+\end{solution}
