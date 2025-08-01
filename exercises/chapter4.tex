@@ -1,65 +1,28 @@
-\section{Dimension and Isomorphism}
+\section{Vector Spaces}
 
-% Problem 4.1
+
+% Problem 5
+\setcounter{problem}{4}
 \begin{problem}
+  Consider the vector space $\mathcal{P}$ and the subsets $\mathcal{V}$ of $\mathcal{P}$ consisting of those vectors (polynomials) $x$ for which
   \begin{enumerate}[label=(\alph*)]
-    \item What is the dimension of the set $\C$ of all complex numbers considered as a real vector space?
-    \item Every complex vector space $\mathcal{V}$ is intimately associated with a real vector space $\mathcal{V}^-$; 
-      the space $\mathcal{V}^-$ is obtained from $\mathcal{V}$ by refusing to multiply vectors of $\mathcal{V}$ by anything other than real scalars.
-      If the dimension of the complex vector space $\mathcal{V}$ is $n$, what is the dimension of the real vector space $\mathcal{V}^-$?
+    \item $x$ has degree $3$,
+    \item $2x(0) = x(1)$,
+    \item $x(t) \ge 0$ whenever $0 \le t \le 1$,
+    \item $x(t) = x(1 - t)$ for all $t$.
   \end{enumerate}
+  In which of these cases is $\mathcal{V}$ a vector space?
 \end{problem}
 
 \begin{solution}
   \begin{enumerate}[label=(\alph*)]
-    \item Since every $z \in \C$ can be written as $\alpha \cdot 1 + \beta \cdot i$, it is clear that $\{1, i\}$ spans $\C$ over $\R$.
-      These vectors are also linearly independent since $\alpha \cdot 1 = i$ implies $\alpha = i$, thus $\alpha \notin \R$.
-      Hence $\{1, i\}$ is a basis of $\C$ over $\R$ and the vector space is 2-dimensional.
-    \item Let $\mathcal{V}$ be a complex vector space isomorphic to $\C^n$, with the canonical basis.
-      If we consider the set of vectors of $\C^n$ over $\R$ we see that with the previous basis we can only make vectors of $\R^n$.
-      Thus we need to add a vector $(0, 0, \ldots, i, 0, \ldots, 0)$ for every vector in the canonical basis.
-      Thus we end up with a set of $2n$ elements.
-      It spans $\C^n$ over $\R$ and is linearly independent for the same reasons as above.
-      Hence $\mathcal{V}^-$ is 2n-dimensional.
+    \item Trivial
+    \item Notice that $2a_1 = a_n + a_{n - 1} + \ldots + a_2 + a_1$.
+      Using this it is trivial to check that $(\alpha \cdot x = \beta \cdot y)(1) = 2(\alpha \cdot a_1 = \beta \cdot b_1) = 2(\alpha \cdot x(0) + \beta \cdot y(0))$.
+      Hence this is a vector space.
+    \item Consider $x(t) = 1$.
+      Clearly it is is part of $\mathcal{V}$, but it has no inverse under vector addition.
+    \item With some simple algebra we can see that this is a vector space.
   \end{enumerate}
 \end{solution}
 
-% Problem 4.2
-\begin{problem}
-  Is the set $\R$ of all real numbers a finite-dimensional vector space over the field $\Q$ of all rational numbers?
-\end{problem}
-
-\begin{solution}
-  No.
-  Imagine we had a finite basis of $\R$ over $\Q$.
-  Then we would have the following finite union of countable sets.
-  Let $x_1, \ldots x_n$ be a basis, consider $x_i \cdot q$, for each $q \in \Q$.
-  Since there are only countably many rationals, this forms a finite union of countable sets.
-  We know that this union is itself countable.
-  However this union is precisely equal $\R$, contradicting the uncoutability of $\R$, proven by Cantor.
-\end{solution}
-
-% Problem 4.3
-\begin{problem}
-  How many vectors are there in an n-dimensional vector space over the field $\Z_p$ where $p$ is prime?
-\end{problem}
-
-\begin{solution}
-  Every vector could be uniquely represented by $\alpha_1 x_1 + \alpha_2 x_2 + \ldots \alpha_n x_n$ for some basis $\{x_1, \ldots, x_n\}$, with $\alpha_i \in \Z_p$.
-  We have $p$ possibilities for each $\alpha_i$.
-  Hence we can form $p^n$ vectors.
-  Since the basis spans the vector sapce, there are precisely $p^n$ vectors.
-\end{solution}
-
-% Problem 4.4
-\begin{problem}
-  Discuss the following assertion: if two rational vector spaces have the same cardinal number, then they are isomorphic.
-\end{problem}
-
-\begin{solution}
-  The given statement is false.
-  Consider the sets $\Q$ and $\Q[\sqrt{2}]$ over $\Q$.
-  It is easy to show that they are both countable, i.e., have a cardinal number $\aleph_0$.
-  However, $\Q$ forms a 1-dimensional vector space with a basis $\{1\}$, while $\Q[\sqrt{2}]$ gives us a 2-dimensional vector space with a basis $\{1, \sqrt{2}\}$.
-  Thus we have 2 vector spaces with the same cardinal number that are not isomorphic.
-\end{solution}
