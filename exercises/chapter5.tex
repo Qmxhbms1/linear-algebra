@@ -1,0 +1,17 @@
+\section{Subspaces, Calculus of Subspaces and Dimension of a subspace}
+
+% Problem 1
+\begin{problem}
+  If $\mathcal{V}$ and $\mathcal{W}$ are finite-dimensional subspaces with the same dimension, and if $\mathcal{W} \subset \mathcal{V}$, then $\mathcal{W} = \mathcal{V}$.
+\end{problem}
+
+\begin{solution}
+  Let us consider an $x \in \mathcal{V}$ such that $x \notin \mathcal{W}$.
+  Consider a basis $\mathcal{B} = \{x_1, \ldots, \x_n\}$ of $\mathcal{W}$.
+  Since we know that $x$ cannot be written as a linear combinantion of vectors in $\mathcal{B}$, the set $\mathcal{B} \cup \{x\}$ must be linearly independent.
+  However this is a set with $n + 1$ elements, contradiciting the fact that any subset with $m > n$ elements of an n-dimensional vectors space is linearly dependent.
+  Hence, we cannot have $x \notin \mathcal{W}$, thus $\mathcal{V} \subset \mathcal{W}$ and finally $\mathcal{V} = \mathcal{W}$.
+\end{solution}
+
+% Problem 2
+
