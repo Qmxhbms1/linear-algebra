@@ -58,3 +58,38 @@
   Since $y \in \mathcal{U}$, we know that for some scalars $\alpha_i$ we have $y = \alpha_1 x_1 + \ldots \alpha_n x_n + \alpha x$, and we know that $\alpha \neq 0$, otherwise $y$ would be a linear combinantion of vectors in $\mathcal{B}$ and hence belong to $\mathcal{W}$.
   Finally, we have $x = \frac{1}{\alpha} y - \frac{\alpha_1}{\alpha} x_1 - \ldots - \frac{\alpha_n}{\alpha} x_n$, hence $x$ is a linear combinantion of vectors in $\mathcal{U'}$ and $x \in \mathcal{U'}$.
 \end{solution}
+
+%Problem 5
+\begin{problem}
+  Suppose that $L, W$ and $V$ are subspaces of a vector space.
+  \begin{enumerate}[label=(\alph*)]
+    \item Show that the equation
+      \[L \cap (W + V) = (L \cap W) + (L \cap V)\]
+      is not necessarily true.
+    \item Prove that
+      \[L \cap (W + (L \cap V)) = (L \cap W) + (L \cap V).\]
+  \end{enumerate}
+\end{problem}
+
+\begin{solution}
+  \begin{enumerate}[label=(\alph*)]
+    \item Consider the following counterexample.
+      Let $L, W$ and $V$ be complex vectors spaces formed by the vectors of the form $\begin{bmatrix} 0\\ y\\ \end{bmatrix}, \begin{bmatrix} x\\ 0\\ \end{bmatrix}$ and $\begin{bmatrix} x\\ x\\ \end{bmatrix}$, respectively.
+      The we can see the vector space $(W + V)$ consists of vectors $\begin{bmatrix} x\\ y\\ \end{bmatrix}$ and clearly $L \cap (W + V) = \{\begin{bmatrix} 0\\ y\\ \end{bmatrix}\}$.
+      On the other hand, we have $L \cap W = \{\begin{bmatrix} 0\\ 0\\ \end{bmatrix}\}$ and $L \cap V = \{\begin{bmatrix} 0\\ 0\\ \end{bmatrix}\}$, thus $(L \cap W) + (L \cap V) = \begin{bmatrix} 0\\ 0\\ \end{bmatrix}$.
+      Thus the two sides are not equal.
+    \item Let $x \in L \cap (W + (L \cap V))$ then we know $x \in L$ and $x \in W + (L \cap V)$.
+      Thus $x$ can be written as $x = u + v$ for some $u \in W$ and $v \in L \cap V$.
+      We then have $v \in L$ and $v \in V$.
+      Notice that since $x \in L$ and $v \in L$, we must also have $u = x - v \in L$.
+      Hence $u \in L \cap W$ and $x = u + v \in (L \cap W) + (L \cap V)$ and $L \cap (W + V) \subset (L \cap W) + (L \cap V)$.
+
+      Conversly, take some $x \in (L \cap W) + (L \cap V)$.
+      We have $x = u + v$ for some $u \in L \cap W$ and $v \in L \cap V$.
+      From there we see that $u \in L$, $u \in W$, $v \in L$ and $v \in V$.
+      Since we have both $u \in L$ and $v \in L$, then clearly $u + v = x \in L$
+      Since we have $u \in W$ and $v \in V$ it is clear that $x = u + v \in W + V$.
+      Thus $x \in L \cap (W + V)$ and we have $(L \cap W) + (L \cap V) \subset L \cap (W + V)$.
+      Finally we get our desired equality $L \cap (W + V) = (L \cap W) + (L \cap V)$.
+  \end{enumerate}
+\end{solution}
