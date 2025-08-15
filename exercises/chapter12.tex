@@ -59,7 +59,7 @@
   Finally, we have $x = \frac{1}{\alpha} y - \frac{\alpha_1}{\alpha} x_1 - \ldots - \frac{\alpha_n}{\alpha} x_n$, hence $x$ is a linear combinantion of vectors in $\mathcal{U'}$ and $x \in \mathcal{U'}$.
 \end{solution}
 
-%Problem 5
+% Problem 5
 \begin{problem}
   Suppose that $L, W$ and $V$ are subspaces of a vector space.
   \begin{enumerate}[label=(\alph*)]
@@ -93,3 +93,75 @@
       Finally we get our desired equality $L \cap (W + V) = (L \cap W) + (L \cap V)$.
   \end{enumerate}
 \end{solution}
+
+% Problem 6
+\begin{problem}
+  \begin{enumerate}[label=(\alph*)]
+    \item Can it happen that a non-trivial subspace of a vector space $V$ (i.e., a subspace different from both $0$ and $V$) has a unique complement?
+    \item If $W$ and $m$-dimensional subspace in an $n$-dimensional vector space, then every complement of $W$ has dimension $n - m$.
+  \end{enumerate}
+\end{problem}
+
+\begin{solution}
+  \begin{enumerate}[label=(\alph*)]
+    \item Let $W$ be a subspace of the vector space $V$ and $U$ it's complement.
+      Fix some $v \in V$ such that $v \notin W$ and $v \notin U$. (if such a $v$ doesn't exist then $W$ and $U$ are trivial).
+      By the definition of complement we know that there exist some $x \in W$ and $y \in U$ such that $x + y = v$.
+      Notice that from there we have $v - x = y$ and that $- x \in W$.
+      Create a basis $\mathcal{B}$ of $U$ which contains $y$ (every linearly independent set can be extended to a basis).
+      Consider the subspace $U'$ which spans the linearly independent set $(\mathcal{B} \setminus \{y\}) \cup \{v\}$.
+      Since $v \notin W$, it is still clear that $W \cap U' = 0$.
+      Clearly all vectors in $V$ which weren't written as linear combinantions of $y$ and some other vector from $W$ are in $W + U'$.
+      For any vector $z = w + y$ we have $z = w - x + v$, with $w - x \in W$ and $v \in U'$.
+      Thus $U'$ is a complement of $W$.
+    \item This directly follows from the following problem.
+  \end{enumerate}
+\end{solution}
+
+% Problem 7
+\begin{problem}
+  \begin{enumerate}[label=(\alph*)]
+    \item Show that if both $W$ and $U$ are three-dimensional subspaces of a five-dimensional vector space, then $W$ and $U$ are not disjoint.
+    \item If $W$ and $U$ are finite-dimensional subspaces of a vector space, then
+      \[dim W + dim U = dim (W + U) + dim (W \cap U).\]
+  \end{enumerate}
+\end{problem}
+
+\begin{solution}
+  Let $W$ and $U$ be n-dimensional and m-dimensional subspaces respectively.
+  Let $\mathcal{B}$ be a basis for the subspace defined by their intersection.
+  Now, consider the basis $\mathcal{B_1}$ and $\mathcal{B_2}$ of $W$ and $U$ respectively, which contain $\mathcal{B}$ (we extend $\mathcal{B}$ to these basis).
+  Notice that $W + U$ is precisely the set which spans the linearly independent set $\mathcal{B_1} \cup \mathcal{B_2}$.
+  By the definitions of our basis we know $|\mathcal{B_1} \cup \mathcal{B_2}| = |\mathcal{B_1}| + |\mathcal{B_2}| - |\mathcal{B}|$.
+  Thus we have $dim (W + U) = dim W + dim U - dim (W \cap U)$.
+  It follows that $dim W + dim U = dim (W + U) + dim (W \cap U)$.
+
+  It is trivial that (a) follows directly from this theorem.
+\end{solution}
+
+% Problem 8
+\begin{problem}
+  A polynomial $x$ is called \textit{even} if $x (- t) = x (t)$ identically in $t$ and it is called \textit{odd} if $x (- t) = - x (t)$.
+  \begin{enumerate}[label=(\alph*)]
+    \item Both the class $W$ of even polynomials and the class $U$ of odd polynomials are subspaces of the space $P$ of all (complex) polynomials.
+    \item Prove that $W$ and $U$ are each other's complements.
+  \end{enumerate}
+\end{problem}
+
+\begin{solution}
+  \begin{enumerate}[label=(\alph*)]
+    \item Let $x (t)$ and $y (t)$ be even polynomials.
+      Consider
+      \[(\alpha x + \beta y)(t) = \alpha x (t) + \beta y (t) = \alpha x (- t) + \beta y (- t) = (\alpha x + \beta y)(- t).\]
+      Thus the set of even polynomials is a subspace.
+      Similarly, for odd polynomials we have
+      \[(\alpha x + \beta y)(t) = \alpha x (t) + \beta y (t) = - \alpha x (- t) - \beta y (- t) = - (\alpha x (- t) + \beta y (- t)) = - (\alpha x + \beta y)(- t).\]
+    \item If we had $x (t) = x (- t) = - x (t)$ then we clearly have $x (t) = 0$.
+      Thus their intersection is trivial.
+      Notice that if a polynomial has only even degrees it must be even and similarly if it has only odd degrees it must be odd.
+      Trivially, any polynomial can be split into the sum of two polynomials, one with only it's even degrees and one with only the odd ones.
+      Thus the direct sum of the space of all even polynomials and the space of all odd polynomials is precisely the set of all polynomials.
+  \end{enumerate}
+\end{solution}
+
+
