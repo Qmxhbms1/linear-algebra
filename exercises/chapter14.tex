@@ -1,0 +1,38 @@
+\section{Dual Spaces and Brackets}
+
+% Problem 6.5
+\setcounter{problem}{4} 
+\begin{problem}
+  If $y$ is a non-zero linear functional on a vector space $V$, and if $\alpha$ is an arbitrary scalar, does there necessarily exist a vector $x$ in $V$ such that $[x, y] = \alpha$
+\end{problem}
+
+\begin{solution}
+  Since $y$ is non-zero there exists some $v \in V$ such that $[v, y] = \beta$ for some non-zero scalar $\beta$.
+  Consider the vector $\frac{\alpha}{\beta} v$.
+  By the definition of a linear functional we have $[\frac{\alpha}{\beta} v, y] = \alpha$, as desired.
+\end{solution}
+
+% Problem 6.6
+\begin{problem}
+  Prove that if $y$ and $z$ are linear functionals (on the same vector space) such that $[x, y] = 0$ whenever $[x, z] = 0$, then there exists a scalar $\alpha$ such that $y = az$.
+\end{problem}
+
+\begin{solution}
+  If $[x, z] = 0$, then it obviously follows that $[x, y] = \alpha [x, z]$ for any scalar $\alpha$.
+  Thus, pick an $x_0$ such that $[x_0, z] \neq 0$.
+  Place $\alpha = \frac{[x_0, y]}{[x_0, z]}$.
+  Obviously we now have $[x_0, y] = \alpha [x_0, z]$.
+  We need to show that for any vector $x$, $[x, y] = \alpha [x, z]$.
+  Let us consider
+  \[[x - \frac{[x, z]}{[x_0, z]} x_0, z] = [x, z] - \frac{[x, z]}{[x_0, z]} [x_0, z] = 0.\]
+  Thus we know that $[x - \frac{[x, z]}{[x_0, z]} x_0, y] = 0$.
+  From there we can see that
+  \[[x - \frac{[x, z]}{[x_0, z]} x_0, y] = \alpha [x - \frac{[x, z]}{[x_0, z]} x_0, z] = 0.\]
+  Thus we get
+  \[[x, y] - \frac{[x, z]}{[x_0, z]} [x_0, y] = \alpha [x, z] - \alpha \frac{[x, z]}{[x_0, z]} [x_0, z].\]
+  Since we have $[x_0, y] = \alpha [x_0, z]$ we can cancel out the terms on both sides and end up with
+  \[[x, y] = \alpha [x, z].\]
+\end{solution}
+
+
+
