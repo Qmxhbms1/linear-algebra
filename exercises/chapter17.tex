@@ -20,3 +20,19 @@
 \begin{solution}
   Take the vectors $x_1 = (1, 0, -1)$ and $x_2 = (0, 1, -1)$.
 \end{solution}
+
+% Problem 7.7
+\setcounter{problem}{6}
+\begin{problem}
+  If $V$ is an $n$-dimensional vector space over a finite field, and if $0 \le m \le n$ then the number of $n$-dimensional subspaces of $V$ is the same as the number of of $(n - m)$-dimensional subspaces.
+\end{problem}
+
+\begin{solution}
+  Let $k$ be the number of elements of the finite field $F$.
+  Then we know that $V$ has precisely $k^n$ vectors as it is isomorphic to $F^n$.
+  Since the dual space of $V$ is also $n$-dimensional we know that it also has $k^n$ elements.
+  Take any $m$-dimensional subspace $W$ of $V$.
+  We know that its annihilator $W^0$ has dimension $(n - m)$.
+  This creates a one-to-one correspondence between the $m$-dimensional subspaces of $V$ and the $(n - m)$-dimensional subspaces of $V'$.
+  Since these two vector spaces have the same number of elements it follows that the amount of $m$ and $(n - m)$-dimensional subspaces is the same.
+\end{solution}
